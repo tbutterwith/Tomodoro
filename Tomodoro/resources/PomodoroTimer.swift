@@ -28,8 +28,9 @@ class PomodoroTimer {
     
     func getTimeString() -> String {
         let formatter = DateComponentsFormatter()
-        formatter.allowedUnits = [.day, .hour, .minute, .second]
+        formatter.allowedUnits = [.minute, .second]
         formatter.unitsStyle = .abbreviated
+        formatter.zeroFormattingBehavior = .pad
         
         return formatter.string(from: remainingTime) ?? ""
     }

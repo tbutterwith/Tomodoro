@@ -48,7 +48,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func setDefaultBarIcon () {
         statusBarItem?.button?.image = NSImage(named: "TomatoIcon")
         statusBarItem?.button?.imagePosition = NSControl.ImagePosition.imageLeft
-        statusBarItem?.button?.title = ""
+        statusBarItem?.button?.title = timer.getTimeString()
     }
     
     func startBreak() {
@@ -87,7 +87,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @objc func updateStatus() {
         // Refresh the menu bar icon
-        statusBarItem?.button?.title = timer.isRunning ? timer.getTimeString() : ""
+        statusBarItem?.button?.title = timer.getTimeString()
         
         // Update the timer
         timer.running()
